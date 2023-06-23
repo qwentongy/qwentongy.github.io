@@ -1,121 +1,279 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            perspective: 800px;
-        }
-        .box {
-            position: relative;
-            width: 1200px;
-            height: 800px;
-            /* background-color: pink; */
-            top: -100px;
-            left: 180px;
-            transform-style: preserve-3d;
-        }
-        .box .origin {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            width: 300px;
-            height: 200px;
-            transform-style: preserve-3d;
-            transform: rotateX(-10deg);
-            /* background-color: yellow; */
-        }
-        .box .origin .og,
-        .box .origin .photos,
-        .box .origin .photo {
-            position: absolute;
-            width: 300px;
-            height: 200px;
-        }
-        .box .origin .photos {
-            transform-style: preserve-3d;
-        }
-        .box .origin .og {
-            background: url(./images/1.jpg);
-            background-size: cover;
-            background-color: purple;
-            transform: rotateY(20deg);
-        }
-        .box .origin .photo {
-            background: url(./images/1.jpg);
-            background-size: cover;
-            opacity: .8;
-        }
-        .box .origin .photo:nth-child(1) {
-            background-color: green;
-            transform: rotateY(60deg) translateZ(400px);
-            background: url(./images/2.jpg);
-            background-size: cover;
-        }
-        .box .origin .photo:nth-child(2) {
-            background-color: blue;
-            transform: rotateY(120deg) translateZ(400px);
-            background: url(./images/3.jpg);
-            background-size: cover;
-        }
-        .box .origin .photo:nth-child(3) {
-            background-color: yellow;
-            transform: rotateY(180deg) translateZ(400px);
-            background: url(./images/4.jpg);
-            background-size: cover;
-        }
-        .box .origin .photo:nth-child(4) {
-            background-color: yellowgreen;
-            transform: rotateY(240deg) translateZ(400px);
-            background: url(./images/5.jpg);
-            background-size: cover;
-        }
-        .box .origin .photo:nth-child(5) {
-            background-color: skyblue;
-            transform: rotateY(300deg) translateZ(400px);
-            background: url(./images/6.jpg);
-            background-size: cover;
-        }
-        .box .origin .photo:nth-child(6) {
-            background-color: saddlebrown;
-            transform: rotateY(360deg) translateZ(400px);
-            background: url(./images/7.jpg);
-            background-size: cover;
-        }
-        .box .origin .photos {
-            animation: rotate 10s linear infinite;
-            transform: rotateY(45deg);
-        }
-        @keyframes rotate {
-            0% {
-                transform: rotateY(0);
-            }
-            50% {
-                transform: rotateY(180deg);
-            }
-            100% {
-                transform: rotateY(360deg);
-            }
-        }
-    </style>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.war{
+			transform-style: preserve-3d;
+/*			font-size: 0;*/
+/*
+			-webkit-transform: rotateX(-33.5deg) rotateY(45deg);
+    		transform: rotateX(-33.5deg) rotateY(45deg);
+*/
+			margin: 0 auto;
+			width: 300px;
+			height: 300px;
+/*			line-height: 500px;*/
+			position: relative;
+			transform-origin: 150px 150px 150px;
+			transform: perspective(800px) rotateX(33deg) rotateY(33deg) rotateZ(33deg);
+			margin-top: 150px;
+			animation: change 12s infinite;
+		}
+		@keyframes change {
+			0%{
+				transform: perspective(800px) rotateX(33deg) rotateY(33deg) rotateZ(33deg);
+			}
+			25%{
+				transform: perspective(800px) rotateX(0deg) rotateY(360deg) rotateZ(0deg);
+			}
+			50%{
+				transform: perspective(800px) rotateX(180deg) rotateY(0deg) rotateZ(180deg);
+			}
+			75%{
+				transform: perspective(800px) rotateX(180deg) rotateY(360deg) rotateZ(180deg);
+			}
+			100%{
+				transform: perspective(800px) rotateX(33deg) rotateY(33deg) rotateZ(33deg);
+			}
+		}
+		.box{
+			opacity: 0.8;
+			width: 300px;
+			height: 300px;
+			display: inline-block;
+			position: absolute;
+			transform-origin: 150px 150px 150px;
+		}
+		.boxm{
+			/* opacity: 0.8; */
+			width: 240px;
+			height: 240px;
+			display: inline-block;
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			transform-origin: 120px 120px 120px;
+		}
+		.box:nth-child(1){
+				background: url(images/1.png);
+				background-size: cover;
+				transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+				animation: one 12s infinite;
+				margin-left: 0;
+				/* transform: scale3d(1,1,0); */
+				background-color: red;
+			}
+		@keyframes one{
+			0%{
+				transform: translateZ(0px)
+			}
+			25%{
+				transform: translateZ(-80px)
+			}
+			50%{
+				transform: translateZ(0px)
+			}
+			75%{
+				transform: translateZ(-80px)
+			}
+			100%{
+				transform: translateZ(0px)
+			}
+		}
+		.box:nth-child(2){
+				background: url(images/2.png);
+				background-size: cover;
+				transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);
+				animation: two 12s infinite;
+				background-color: orange;
+			}
+			@keyframes two{
+			0%{
+				transform:rotateX(0deg) rotateY(90deg) rotateZ(0deg) translateZ(0px)
+			}
+			25%{
+				transform:rotateX(0deg) rotateY(90deg) rotateZ(0deg) translateZ(-80px)
+			}
+			50%{
+				transform:rotateX(0deg) rotateY(90deg) rotateZ(0deg) translateZ(0px)
+			}
+			75%{
+				transform:rotateX(0deg) rotateY(90deg) rotateZ(0deg) translateZ(-80px)
+			}
+			100%{
+				transform:rotateX(0deg) rotateY(90deg) rotateZ(0deg) translateZ(0px)
+			}
+		}
+		.box:nth-child(3){
+				background: url(images/3.png);
+				background-size: cover;
+				transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+				animation: three 12s infinite;
+				background-color: yellow;
+			}
+			@keyframes three{
+			0%{
+				transform:rotateX(0deg) rotateY(180deg) rotateZ(0deg) translateZ(0px)
+			}
+			25%{
+				transform:rotateX(0deg) rotateY(180deg) rotateZ(0deg) translateZ(-80px)
+			}
+			50%{
+				transform:rotateX(0deg) rotateY(180deg) rotateZ(0deg) translateZ(0px)
+			}
+			75%{
+				transform:rotateX(0deg) rotateY(180deg) rotateZ(0deg) translateZ(-80px)
+			}
+			100%{
+				transform:rotateX(0deg) rotateY(180deg) rotateZ(0deg) translateZ(0px)
+			}
+		}
+		.box:nth-child(4){
+				background: url(images/4.png);
+				background-size: cover;
+				transform: rotateX(0deg) rotateY(270deg) rotateZ(0deg);
+				animation: four 12s infinite;
+				background-color: yellowgreen;
+			}
+			@keyframes four{
+			0%{
+				transform:rotateX(0deg) rotateY(270deg) rotateZ(0deg) translateZ(0px)
+			}
+			25%{
+				transform:rotateX(0deg) rotateY(270deg) rotateZ(0deg) translateZ(-80px)
+			}
+			50%{
+				transform:rotateX(0deg) rotateY(270deg) rotateZ(0deg) translateZ(0px)
+			}
+			75%{
+				transform:rotateX(0deg) rotateY(270deg) rotateZ(0deg) translateZ(-80px)
+			}
+			100%{
+				transform:rotateX(0deg) rotateY(270deg) rotateZ(0deg) translateZ(0px)
+			}
+		}
+		.box:nth-child(5){
+				background: url(images/5.png);
+				background-size: cover;
+				transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+				animation: five 12s infinite;
+				background-color: teal;
+			}
+			@keyframes five{
+			0%{
+				transform:rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(0px)
+			}
+			25%{
+				transform:rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(-80px)
+			}
+			50%{
+				transform:rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(0px)
+			}
+			75%{
+				transform:rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(-80px)
+			}
+			100%{
+				transform:rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(0px)
+			}
+		}
+		.box:nth-child(6){
+				background: url(images/6.png);
+				background-size: cover;
+				transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+				animation: six 12s infinite;
+				background-color: blue;
+			}
+			@keyframes six{
+			0%{
+				transform:rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateZ(0px)
+			}
+			25%{
+				transform:rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateZ(-80px)
+			}
+			50%{
+				transform:rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateZ(0px)
+			}
+			75%{
+				transform:rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateZ(-80px)
+			}
+			100%{
+				transform:rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateZ(0px)
+			}
+		}
+
+
+		.boxm:nth-child(7){
+				background: url(images/1.png);
+				background-size: cover;
+				transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);
+				margin-left: 0;
+				/* transform: scale3d(1,1,0); */
+				background-color: red;
+		}
+		.boxm:nth-child(8){
+				background: url(images/2.png);
+				background-size: cover;
+				transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+				margin-left: 0;
+				/* transform: scale3d(1,1,0); */
+				background-color: red;
+		}
+		.boxm:nth-child(9){
+				background: url(images/3.png);
+				background-size: cover;
+				transform: rotateX(0deg) rotateY(270deg) rotateZ(0deg);
+				margin-left: 0;
+				/* transform: scale3d(1,1,0); */
+				background-color: red;
+		}
+		.boxm:nth-child(10){
+				background: url(images/4.png);
+				background-size: cover;
+				transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+				margin-left: 0;
+				/* transform: scale3d(1,1,0); */
+				background-color: red;
+		}
+		.boxm:nth-child(11){
+				background: url(images/5.png);
+				background-size: cover;
+				transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+				margin-left: 0;
+				/* transform: scale3d(1,1,0); */
+				background-color: red;
+		}
+		.boxm:nth-child(12){
+				background: url(images/6.png);
+				background-size: cover;
+				transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+				margin-left: 0;
+				/* transform: scale3d(1,1,0); */
+				background-color: red;
+		}
+
+	</style>
 </head>
+
 <body>
-    <div class="box">
-        <div class="origin">
-            <div class="og"></div>
-            <div class="photos">
-                <div class="photo"></div>
-                <div class="photo"></div>
-                <div class="photo"></div>
-                <div class="photo"></div>
-                <div class="photo"></div>
-                <div class="photo"></div>
-            </div>
-        </div>
-    </div>
+	<div class="war">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="boxm"></div>
+		<div class="boxm"></div>
+		<div class="boxm"></div>
+		<div class="boxm"></div>
+		<div class="boxm"></div>
+		<div class="boxm"></div>
+	</div>
 </body>
 </html>
