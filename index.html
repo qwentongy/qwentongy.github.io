@@ -32,9 +32,9 @@
 			25%{
 				transform: perspective(800px) rotateX(0deg) rotateY(360deg) rotateZ(0deg);
 			}
-			50%{
-				transform: perspective(800px) rotateX(180deg) rotateY(0deg) rotateZ(180deg);
-			}
+			/* 50%{
+				transform: rotateX(270deg) rotateY(360deg) rotateZ(0deg);
+			} */
 			75%{
 				transform: perspective(800px) rotateX(180deg) rotateY(360deg) rotateZ(180deg);
 			}
@@ -49,16 +49,6 @@
 			display: inline-block;
 			position: absolute;
 			transform-origin: 150px 150px 150px;
-		}
-		.boxm{
-			/* opacity: 0.8; */
-			width: 240px;
-			height: 240px;
-			display: inline-block;
-			position: absolute;
-			top: 30px;
-			left: 30px;
-			transform-origin: 120px 120px 120px;
 		}
 		.box:nth-child(1){
 				background: url(images/1.png);
@@ -207,56 +197,6 @@
 			}
 		}
 
-
-		.boxm:nth-child(7){
-				background: url(images/1.png);
-				background-size: cover;
-				transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);
-				margin-left: 0;
-				/* transform: scale3d(1,1,0); */
-				background-color: red;
-		}
-		.boxm:nth-child(8){
-				background: url(images/2.png);
-				background-size: cover;
-				transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
-				margin-left: 0;
-				/* transform: scale3d(1,1,0); */
-				background-color: red;
-		}
-		.boxm:nth-child(9){
-				background: url(images/3.png);
-				background-size: cover;
-				transform: rotateX(0deg) rotateY(270deg) rotateZ(0deg);
-				margin-left: 0;
-				/* transform: scale3d(1,1,0); */
-				background-color: red;
-		}
-		.boxm:nth-child(10){
-				background: url(images/4.png);
-				background-size: cover;
-				transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg);
-				margin-left: 0;
-				/* transform: scale3d(1,1,0); */
-				background-color: red;
-		}
-		.boxm:nth-child(11){
-				background: url(images/5.png);
-				background-size: cover;
-				transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
-				margin-left: 0;
-				/* transform: scale3d(1,1,0); */
-				background-color: red;
-		}
-		.boxm:nth-child(12){
-				background: url(images/6.png);
-				background-size: cover;
-				transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-				margin-left: 0;
-				/* transform: scale3d(1,1,0); */
-				background-color: red;
-		}
-
 	</style>
 </head>
 
@@ -268,12 +208,6 @@
 		<div class="box"></div>
 		<div class="box"></div>
 		<div class="box"></div>
-		<div class="boxm"></div>
-		<div class="boxm"></div>
-		<div class="boxm"></div>
-		<div class="boxm"></div>
-		<div class="boxm"></div>
-		<div class="boxm"></div>
 	</div>
 </body>
 </html>
